@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Navbar from "./Components/Navbar/Navbar";
+import Home from "./Components/Home/Home";
+import Comment from "./Components/Comments/Comment";
+import Travel from "./Components/Pages/Travel/Travel";
+import Yonalish from "./Components/Pages/Yonalish/Yonalish";
+import Connect from "./Components/Pages/BizBog'lanish/Connect";
+import Ariza from "./Components/Pages/Ariza/Ariza";
+import { ContactUs } from "./Components/Pages/ContactUs/ContactUs";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/travel/" element={<Home />}></Route>
+        <Route path="/sharhlar" element={<Comment />}></Route>
+        <Route path="/takliflar" element={<ContactUs />}></Route>
+        <Route path="/bog'lanish" element={<Connect />}></Route>
+        <Route path="/yo'nalishlar" element={<Yonalish />}></Route>
+        <Route path="/ariza" element={<Ariza />}></Route>
+      </Routes>
+      <Travel />
     </div>
   );
 }
